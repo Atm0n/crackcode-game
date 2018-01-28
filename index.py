@@ -1,7 +1,10 @@
 import time, random
 difficulty = 2 + int(input("Choose the dificulty, 3 for easy, 2 for normal, 1 for HARD: "))
-difficulty2 =difficulty
+difficulty2 = difficulty
+attempts = 0
 clues = list()
+
+
 def generator():
     secret = str(random.randint(0, 999))
     if len(secret) == 3:
@@ -22,13 +25,19 @@ code = generator()
 
 print(clues)
 print(code + "code")
-for a in range(0, difficulty):
-    for b in list(clues[a]):
-        for c in code:
-            if b == c:
-                print(a)
-                print(b)
+print(range(0, len(clues)-1))
 
-                print(str(c) + "==" + str(b))
+for a in clues:
+    for d in range(0, len(a)):
+        for c in range(0, len(code)):
+            if a[d] == code[c]:
+                print(str(c) + "==" + str(d))
+                print(a)
+                if d == c:
+                    print(str(d) + " " + str(c) + "mateix lloc")
+                else:
+                    print(str(d) + " " + str(c) + "diferent lloc")
+            else:
+                pass
 
 
