@@ -1,0 +1,15 @@
+print("CRACK THE CODE")
+#time.sleep(2)
+print("This game is about guessing a code with clues")
+#time.sleep(1)
+print("You only have 3 attempts until the system blocks so be sure about the code you are going to put")
+#time.sleep(1)
+print("every code is about 3 to 6 numbers(depends of the difficulty level)")
+#time.sleep(1)
+difficulty = int(input("3 for Normal \n4 for Normal+ \n5 for Difficult \n6 for Hard "))
+if input("Let's START\n") == "START":
+    pass
+else:
+    print("TRY AGAIN")
+    time.sleep(5)
+    exit()
