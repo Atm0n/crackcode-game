@@ -26,18 +26,19 @@ code = generator()
 print(clues)
 print(code + "code")
 print(range(0, len(clues)-1))
-
+print("CLUES")
 for a in clues:
     for d in range(0, len(a)):
         for c in range(0, len(code)):
             if a[d] == code[c]:
-                print(str(c) + "==" + str(d))
-                print(a)
                 if d == c:
-                    print(str(d) + " " + str(c) + "mateix lloc")
+                    print(str(a) + " There's a number well placed")
                 else:
-                    print(str(d) + " " + str(c) + "diferent lloc")
+                    print(str(a) + " There's a number wrong placed")
             else:
                 pass
 
 
+while code != str(int(input("Enter a 3 number lenght code: "))):
+    pass
+print("Ho has aconseguit!")
