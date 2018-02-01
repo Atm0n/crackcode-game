@@ -4,7 +4,6 @@ difficulty2 = difficulty
 attempts = 0
 clues = list()
 
-
 def generator():
     secret = str(random.randint(0, 999))
     if len(secret) == 3:
@@ -14,7 +13,6 @@ def generator():
             secret = "0" + secret
             # if the random number isn't 3 numbers large it fix them.
     return secret
-# CLUES
 
 
 while difficulty2 > 0:
@@ -23,22 +21,23 @@ while difficulty2 > 0:
 
 code = generator()
 
-print(clues)
-print(code + "code")
-print(range(0, len(clues)-1))
-print("CLUES")
-for a in clues:
-    for d in range(0, len(a)):
-        for c in range(0, len(code)):
-            if a[d] == code[c]:
-                if d == c:
-                    print(str(a) + " There's a number well placed")
+
+def clues_function():
+
+    for a in clues:
+        for d in range(0, len(a)):
+            for c in range(0, len(code)):
+                if a[d] == code[c]:
+                    if d == c:
+                        print(str(a) + " There's a number well placed")
+                    else:
+                        print(str(a) + " There's a number wrong placed")
                 else:
-                    print(str(a) + " There's a number wrong placed")
-            else:
-                pass
+                    
+                    pass
 
-
+clues_function()
 while code != str(int(input("Enter a 3 number lenght code: "))):
+
     pass
-print("Ho has aconseguit!")
+print("You guessed it!!")
